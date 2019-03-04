@@ -19,9 +19,10 @@ public class ComboServiceImpl implements ComboService {
 	private ComboRepository repo;	
 	
 	@Override
-	public Combo addCombo(String comboName) {
+	public Combo addCombo(String comboName, String comboInput) {
 		Combo combo = new Combo();
 		combo.setComboName(comboName);
+		combo.setcomboInput(comboInput);
 		
 		return repo.save(combo);
 	}

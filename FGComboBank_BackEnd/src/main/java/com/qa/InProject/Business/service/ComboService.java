@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.qa.InProject.persistence.Domain.*;
 
 public interface ComboService {
-	public Combo addCombo(String comboName);
+	public Combo addCombo(String comboName, String comboInput);
 	public Optional<Combo> getCombo(Long comboId);
 	public List<Combo> getAllCombos();
 	public String removeCombo(Long comboId);

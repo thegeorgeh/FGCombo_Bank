@@ -14,6 +14,8 @@ public class Combo {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
+	@Column(name = "playerName")
+	private String playerName;
 	@Column(name = "comboId")
 	private Long comboId;
 	@Column(name = "comboName")
@@ -22,17 +24,20 @@ public class Combo {
 	private String comboInput;
 	@Column(name = "comboDamage")
 	private int comboDamage;
-	
+
+
 	public Combo()
 	{
 		
 	}
 	
-	public Combo(String comboName, String comboInput, int comboDamage)
+	public Combo(String playerName, String comboName, String comboInput, int comboDamage)
 	{
+		super();
 		this.comboName = comboName;
 		this.comboInput = comboInput;
 		this.comboDamage = comboDamage;
+		this.playerName = playerName;
 	}
 
 
@@ -68,5 +73,12 @@ public class Combo {
 		this.comboDamage = comboDamage;
 	}
 	
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
 }
 

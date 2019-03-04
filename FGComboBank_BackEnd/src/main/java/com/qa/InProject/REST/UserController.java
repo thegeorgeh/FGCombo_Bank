@@ -18,17 +18,15 @@ public class UserController {
 	public UserServiceImpl svc;
 
 	@RequestMapping("/addUser/{userName}/{userPassword}")
-
 	public User addUser(@PathVariable String userName, @PathVariable String userPassword) {
 		User result = svc.addUser(userName, userPassword);
 
 		return result;
 	}
 
-	@RequestMapping("/getUser/{userID}")
-	public Optional<User> getUser(@PathVariable Long userID) {
-
-		return svc.getUser(userID);
+	@RequestMapping("/getUser/{userId}")
+	public Optional<User> getUser(@PathVariable Long userId) {
+		return svc.getUser(userId);
 	}
 
 	@RequestMapping("/getAllUsers")

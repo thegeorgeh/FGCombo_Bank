@@ -17,10 +17,9 @@ public class ComboController {
 	@Autowired
 	public ComboServiceImpl svc;
 
-	@RequestMapping("/addCombo/{comboName}")
-
-	public Combo addCombo(@PathVariable String comboName) {
-		Combo result = svc.addCombo(comboName);
+	@RequestMapping("/addCombo/{comboName}/{comboInput}")
+	public Combo addCombo(@PathVariable String comboName, @PathVariable String comboInput) {
+		Combo result = svc.addCombo(comboName, comboInput);
 
 		return result;
 	}

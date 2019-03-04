@@ -18,7 +18,6 @@ public class GameController {
 	public GameServiceImpl svc;
 
 	@RequestMapping("/addGame/{gameName}")
-
 	public Game addGame(@PathVariable String gameName) {
 		Game result = svc.addGame(gameName);
 
