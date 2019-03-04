@@ -19,9 +19,10 @@ public class UserServiceImpl implements UserService {
 	private UserRepository repo;	
 	
 	@Override
-	public User addUser(String userName) {
+	public User addUser(String userName, String userPassword) {
 		User user = new User();
 		user.setUserName(userName);
+		user.setUserPassword(userPassword);
 		
 		return repo.save(user);
 	}

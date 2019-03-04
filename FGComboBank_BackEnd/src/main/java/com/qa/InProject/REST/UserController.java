@@ -17,10 +17,10 @@ public class UserController {
 	@Autowired
 	public UserServiceImpl svc;
 
-	@RequestMapping("/addUser/{userName}")
+	@RequestMapping("/addUser/{userName}/{userPassword}")
 
-	public User addUser(@PathVariable String userName) {
-		User result = svc.addUser(userName);
+	public User addUser(@PathVariable String userName, @PathVariable String userPassword) {
+		User result = svc.addUser(userName, userPassword);
 
 		return result;
 	}

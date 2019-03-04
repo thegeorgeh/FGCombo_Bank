@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import com.qa.InProject.persistence.Domain.Game;
+import com.qa.InProject.persistence.Domain.Player;
 import com.qa.InProject.persistence.Repository.GameRepository;
 
 

@@ -25,11 +25,11 @@ public class GameController {
 		return result;
 	}
 
-	@RequestMapping("/getGame/{gameID}")
-	public Optional<Game> getGame(@PathVariable Long gameID) {
-
-		return svc.getGame(gameID);
+	@RequestMapping("/getGame/{gameId}")
+	public Optional <Game> getGame(@PathVariable Long gameId) {
+		return svc.getGame(gameId);
 	}
+
 
 	@RequestMapping("/getAllGames")
 	public List<Game> getAllGames() {
@@ -38,9 +38,9 @@ public class GameController {
 		return allClasses;
 	}
 
-	@RequestMapping("/removeGame/{gameID}")
-	public String removeGame(@PathVariable Long gameID) {
-		return svc.removeGame(gameID);
+	@RequestMapping("/removeGame/{gameId}")
+	public String removeGame(@PathVariable Long gameId) {
+		return svc.removeGame(gameId);
 	}
 
 }

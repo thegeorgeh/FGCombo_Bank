@@ -16,9 +16,9 @@ public class User {
 	@Id
 	@Column(name = "userId")
 	private Long userId;
-	@Column(name = "userName")
+	@Column(name = "userName", unique=true)
 	private String userName;
-	@Column(name = "userPassword")
+	@Column( name = "userPassword", nullable=false)
 	private String userPassword;
 	
 	public User()
@@ -26,18 +26,18 @@ public class User {
 		
 	}
 	
-	public User(String userName, String userPassword )
+	public User(String userName, String userPassword)
 	{
 		this.userName = userName;
 		this.userPassword = userPassword;
 	}
+	
 
-
-	public Long getId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setId(Long id) {
+	public void setUserId(Long id) {
 		this.userId = id;
 	}
 
@@ -49,13 +49,22 @@ public class User {
 		this.userName = userName;
 	}
 	
-	public String getImageUrl() {
+	public String getUserPassword() {
 		return userPassword;
 	}
 
-	public void setImageUrl(String userPassword) {
+	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
+
+	
+	
+
+	
+	
+
+
+
 
 
 	

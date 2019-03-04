@@ -56,5 +56,10 @@ public class Game {
 	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
 	}
+
+	public void getGameName(Long gameId) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
