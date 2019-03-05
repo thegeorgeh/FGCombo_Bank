@@ -35,6 +35,7 @@ public class User {
 	@OneToMany
 	@JoinColumn(name = "userName", nullable = false, insertable = false, updatable = false)
 	private Set<Game> games;
+	
 
 //	@OnDelete(action = OnDeleteAction.CASCADE)
 	

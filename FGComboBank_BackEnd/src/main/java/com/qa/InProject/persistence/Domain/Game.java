@@ -32,12 +32,13 @@ public class Game {
 	@OneToMany
 	@JoinColumn(name = "gameName", nullable = false, insertable = false, updatable = false)
 	private Set<Player> players;
+	
 
 	public Game()
 	{
 		
 	}
-	
+
 	public Game(String userName, String gameName, int releaseYear, Set<Player> players)
 	{
 		super();
