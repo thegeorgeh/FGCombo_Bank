@@ -72,12 +72,10 @@ public class Player {
 		this.combos = combos;
 	}
 
-	public Player(String gameName, String playerName, String imageUrl, String fightingStyle)
+	public Player(String gameName, String playerName, Set<Combo> combos)
 	{
 		super();
 		this.playerName = playerName;
-		this.imageUrl = imageUrl;
-		this.fightingStyle = fightingStyle;
 		this.gameName = gameName;
 		this.combos = combos;
 	}

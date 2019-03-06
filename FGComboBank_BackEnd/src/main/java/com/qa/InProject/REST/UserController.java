@@ -23,6 +23,11 @@ public class UserController {
 
 		return result;
 	}
+	
+	@RequestMapping("/updateUser/{userId}")
+	public String updateUser(@PathVariable Long userId) {
+		return svc.updateUser(userId);
+	}
 
 	@RequestMapping("/getUser/{userId}")
 	public Optional<User> getUser(@PathVariable Long userId) {
@@ -36,9 +41,9 @@ public class UserController {
 		return allClasses;
 	}
 
-	@RequestMapping("/removeUser/{userID}")
-	public String removeUser(@PathVariable Long userID) {
-		return svc.removeUser(userID);
+	@RequestMapping("/removeUser/{userId}")
+	public String removeUser(@PathVariable Long userId) {
+		return svc.removeUser(userId);
 	}
 
 }

@@ -17,12 +17,18 @@ public class ComboController {
 	@Autowired
 	public ComboServiceImpl svc;
 
-	@RequestMapping("/addCombo/{comboName}/{comboInput}")
-	public Combo addCombo(@PathVariable String comboName, @PathVariable String comboInput) {
-		Combo result = svc.addCombo(comboName, comboInput);
+	@RequestMapping("/addCombo/{playerName}/{comboName}/{comboInput}")
+	public Combo addCombo(@PathVariable String playerName, @PathVariable String comboName, @PathVariable String comboInput) {
+		Combo result = svc.addCombo(playerName, comboName, comboInput);
 
 		return result;
 	}
+	
+	@RequestMapping("/updateCombo/{comboId}")
+	public String updateCombo(@PathVariable Long comboId) {
+		return svc.updateCombo(comboId);
+	}
+
 
 	@RequestMapping("/getCombo/{comboID}")
 	public Optional<Combo> getCombo(@PathVariable Long comboID) {

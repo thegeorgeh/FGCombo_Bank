@@ -2,6 +2,7 @@ package com.qa.InProject.Business.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,9 +21,11 @@ public class GameServiceImpl implements GameService {
 	private GameRepository repo;	
 	
 	@Override
-	public Game addGame(String gameName) {
+	public Game addGame(String userName, String gameName, Set<Player> player) {
 		Game game = new Game();
+		game.setUserName(userName);
 		game.setGameName(gameName);
+		game.setPlayers(player);
 		
 		return repo.save(game);
 	}

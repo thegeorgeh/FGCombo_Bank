@@ -31,12 +31,11 @@ public class Combo {
 		
 	}
 	
-	public Combo(String playerName, String comboName, String comboInput, int comboDamage)
+	public Combo(String playerName, String comboName, String comboInput)
 	{
 		super();
 		this.comboName = comboName;
 		this.comboInput = comboInput;
-		this.comboDamage = comboDamage;
 		this.playerName = playerName;
 	}
 
