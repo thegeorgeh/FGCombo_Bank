@@ -52,9 +52,9 @@ public class ComboBusinessTest {
 
 	@Test
 	public void testUpdateCombo() {
-		// TODO add update method
+//		// TODO add update method
 //		Mockito.when(testString).thenReturn(testString); 
-		// assertEquals(testString, svc.updateCombo(testString, testLong));
+//		 assertEquals(testString, svc.updateCombo(testLong));
 	}
 
 	@Test

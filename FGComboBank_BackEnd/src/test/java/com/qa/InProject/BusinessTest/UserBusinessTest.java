@@ -52,18 +52,18 @@ public class UserBusinessTest {
 
 	@Test
 	public void testUpdateUser() {
-		// TODO add update method
+//		 TODO add update method
 //		Mockito.when(testString).thenReturn(testString); 
-		// assertEquals(testString, svc.updateUser(testString, testLong));
+//		 assertEquals(testString, svc.updateUser(testLong));
 	}
 
 	@Test
 	public void testDeleteUser() {
-//		Mockito.when(repo.deleteById(testLong));  
-//		repo.deleteById(testLong);  
-
-//		Mockito.when();
-		// .thenReturn(testString)
+////		Mockito.when(repo.deleteById(testLong));  
+////		repo.deleteById(testLong);  
+//
+////		Mockito.when();
+//		// .thenReturn(testString)
 //		assertEquals(testString, svc.deleteUser(testLong));
 	}
 }

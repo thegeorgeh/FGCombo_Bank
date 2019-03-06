@@ -52,9 +52,9 @@ public class GameBusinessTest {
 
 	@Test
 	public void testUpdateGame() {
-		// TODO add update method
+//		// TODO add update method
 //		Mockito.when(testString).thenReturn(testString); 
-		// assertEquals(testString, svc.updateGame(testString, testLong));
+//		 assertEquals(testString, svc.updateGame(testLong));
 	}
 
 	@Test
