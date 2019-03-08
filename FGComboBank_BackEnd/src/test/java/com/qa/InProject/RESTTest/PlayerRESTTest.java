@@ -51,14 +51,14 @@ public class PlayerRESTTest {
 	@Test
 	public void testGetAPlayer() {
 		Player MOCK_OBJECT = new Player();
-		Mockito.when(svc.getPlayer(testLong)).thenReturn(Optional.of(MOCK_OBJECT));
+		Mockito.when(svc.getPlayer(testLong)).thenReturn(MOCK_OBJECT);
 		assertEquals(Optional.of(MOCK_OBJECT), uCon.getPlayer(testLong));
 	}
 
 	@Test
 	public void testUpdateAPlayer() {
-		Mockito.when(svc.updatePlayer(testLong)).thenReturn(testString);
-		assertEquals(testString, uCon.updatePlayer(testLong));
+		Mockito.when(svc.updatePlayer(testLong, testPlayerName)).thenReturn(testString);
+		assertEquals(testString, uCon.updatePlayer(testLong, testPlayerName));
 	}
 
 	@Test

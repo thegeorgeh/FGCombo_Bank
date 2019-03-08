@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.qa.InProject.persistence.Domain.Combo;
 import com.qa.InProject.persistence.Domain.Player;
+import com.qa.InProject.persistence.Domain.Player;
 import com.qa.InProject.persistence.Repository.PlayerRepository;
 
 
@@ -21,9 +22,9 @@ public class PlayerServiceImpl implements PlayerService {
 	private PlayerRepository repo;	
 	
 	@Override
-	public Player addPlayer(Long gameID, String playerName) {
+	public Player addPlayer(Long playerID, String playerName) {
 		Player player = new Player();
-		player.setGameID(gameID);
+		player.setPlayerID(playerID);
 		player.setPlayerName(playerName);
 		return repo.save(player);
 	}
@@ -35,14 +36,17 @@ public class PlayerServiceImpl implements PlayerService {
 	}
 
 	@Override
-	public Optional<Player> getPlayer(Long playerID) {
-		return repo.findById(playerID);
+	public Player getPlayer(Long playerID) {
+		return repo.findById(playerID).get();
 	}
 
 	@Override
-	public String updatePlayer(Long playerID) {
-		repo.findById(playerID);
-		return null;
+	public String updatePlayer(Long playerID, String playerName) {
+		Player player = getPlayer(playerID);
+		player.setPlayerName(playerName);
+	
+		repo.save(player);
+		return "User " + playerID + " updated";
 	}
 
 	@Override

@@ -8,8 +8,8 @@ import com.qa.InProject.persistence.Domain.*;
 
 public interface PlayerService {
 	public Player addPlayer(Long gameID, String playerName);
-	public Optional<Player> getPlayer(Long playerID);
+	public Player getPlayer(Long playerID);
 	public List<Player> getAllPlayers();
 	public String removePlayer(Long playerID);
-	public String updatePlayer(Long playerID);
+	public String updatePlayer(Long playerID, String playerName);
 }

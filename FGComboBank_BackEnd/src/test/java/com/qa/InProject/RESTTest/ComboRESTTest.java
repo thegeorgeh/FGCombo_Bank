@@ -51,14 +51,14 @@ public class ComboRESTTest {
 	@Test
 	public void testGetACombo() {
 		Combo MOCK_OBJECT = new Combo();
-		Mockito.when(svc.getCombo(testLong)).thenReturn(Optional.of(MOCK_OBJECT));
+		Mockito.when(svc.getCombo(testLong)).thenReturn(MOCK_OBJECT);
 		assertEquals(Optional.of(MOCK_OBJECT), uCon.getCombo(testLong));
 	}
 
 	@Test
 	public void testUpdateACombo() {
-		Mockito.when(svc.updateCombo(testLong)).thenReturn(testString);
-		assertEquals(testString, uCon.updateCombo(testLong));
+		Mockito.when(svc.updateCombo(testLong, testComboName, testComboName)).thenReturn(testString);
+		assertEquals(testString, uCon.updateCombo(testLong, testComboName, testComboName));
 	}
 
 	@Test

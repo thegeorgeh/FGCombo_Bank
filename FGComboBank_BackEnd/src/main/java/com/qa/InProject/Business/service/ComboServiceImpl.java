@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import com.qa.InProject.persistence.Domain.Combo;
+import com.qa.InProject.persistence.Domain.Combo;
 import com.qa.InProject.persistence.Repository.ComboRepository;
 
 
@@ -23,7 +24,7 @@ public class ComboServiceImpl implements ComboService {
 		Combo combo = new Combo();
 		combo.setPlayerID(playerID);
 		combo.setComboName(comboName);
-		combo.setcomboInput(comboInput);
+		combo.setComboInput(comboInput);
 		
 		return repo.save(combo);
 	}
@@ -34,20 +35,24 @@ public class ComboServiceImpl implements ComboService {
 	}
 
 	@Override
-	public Optional<Combo> getCombo(Long comboID) {
-		return repo.findById(comboID);
+	public Combo getCombo(Long comboID) {
+		return repo.findById(comboID).get();
 	}
 
 	@Override
-	public String updateCombo(Long comboID) {
-		repo.findById(comboID);
-		return null;
+	public String updateCombo(Long comboID, String comboName, String comboInput) {
+		Combo combo = getCombo(comboID);
+		combo.setComboName(comboName);
+		combo.setComboInput(comboInput);
+	
+		repo.save(combo);
+		return "User " + comboID + " updated";
 	}
 
 	@Override
 	public String removeCombo(Long comboID) {
-		repo.findById(comboID);
-		return null;
+		repo.deleteById(comboID);
+		return "Combo "+comboID+" deleted";
 	}
 	
 	public void setRepo(ComboRepository repo)

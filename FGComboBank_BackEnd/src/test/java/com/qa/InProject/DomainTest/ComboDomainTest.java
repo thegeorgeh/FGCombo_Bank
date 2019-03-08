@@ -45,14 +45,14 @@ public class ComboDomainTest {
 	    combo.setPlayerID(playerID);
 	    combo.setComboName(comboName);
 	    combo.setID(comboID);
-	    combo.setcomboDamage(comboDamage);
-	    combo.setcomboInput(comboInput);
+	    combo.setComboDamage(comboDamage);
+	    combo.setComboInput(comboInput);
 	    
 	    assertEquals(playerID, combo.getPlayerID());
 	    assertEquals(comboID, combo.getID());
 	    assertEquals(comboName, combo.getComboName());
-	    assertEquals(comboDamage, combo.getcomboDamage());
-	    assertEquals(comboInput, combo.getcomboInput());
+	    assertEquals(comboDamage, combo.getComboDamage());
+	    assertEquals(comboInput, combo.getComboInput());
 
 	}
 }

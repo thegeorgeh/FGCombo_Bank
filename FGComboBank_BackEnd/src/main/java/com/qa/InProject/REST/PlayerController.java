@@ -28,12 +28,12 @@ public class PlayerController {
 	}
 	
 	@RequestMapping("/updatePlayer/{playerID}")
-	public String updatePlayer(@PathVariable Long playerID) {
-		return svc.updatePlayer(playerID);
+	public String updatePlayer(@PathVariable Long playerID, @PathVariable String playerName) {
+		return svc.updatePlayer(playerID, playerName);
 	}
 
 	@RequestMapping("/getPlayer/{playerID}")
-	public Optional<Player> getPlayer(@PathVariable Long playerID) {
+	public Player getPlayer(@PathVariable Long playerID) {
 
 		return svc.getPlayer(playerID);
 	}

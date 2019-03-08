@@ -24,14 +24,14 @@ public class ComboController {
 		return result;
 	}
 	
-	@RequestMapping("/updateCombo/{comboId}")
-	public String updateCombo(@PathVariable Long comboId) {
-		return svc.updateCombo(comboId);
+	@RequestMapping("/updateCombo/{comboId}/{comboName}/{comboInput}")
+	public String updateCombo(@PathVariable Long comboId, @PathVariable String comboName, @PathVariable String comboInput) {
+		return svc.updateCombo(comboId, comboName, comboInput);
 	}
 
 
 	@RequestMapping("/getCombo/{comboID}")
-	public Optional<Combo> getCombo(@PathVariable Long comboID) {
+	public Combo getCombo(@PathVariable Long comboID) {
 
 		return svc.getCombo(comboID);
 	}

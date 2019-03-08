@@ -56,19 +56,19 @@ public class Combo {
 		this.comboName = comboName;
 	}
 	
-	public String getcomboInput() {
+	public String getComboInput() {
 		return comboInput;
 	}
 
-	public void setcomboInput(String comboInput) {
+	public void setComboInput(String comboInput) {
 		this.comboInput = comboInput;
 	}
 
-	public int getcomboDamage() {
+	public int getComboDamage() {
 		return comboDamage;
 	}
 
-	public void setcomboDamage(int comboDamage) {
+	public void setComboDamage(int comboDamage) {
 		this.comboDamage = comboDamage;
 	}
 	
