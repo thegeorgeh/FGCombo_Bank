@@ -20,10 +20,11 @@ public class Player {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	@Column(name = "gameName")
-	private String gameName;
-	@Column(name = "playerId")
-	private Long playerId;
+	@Column(name = "playerID")
+	private Long playerID;
+	@Column(name = "gameID")
+	private Long gameID;
+
 	@Column(name = "playerName")
 	private String playerName;
 	@Column(name = "imageUrl")
@@ -32,7 +33,7 @@ public class Player {
 	private String fightingStyle;
 	
 	@OneToMany
-	@JoinColumn(name = "playerName", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "playerID", nullable = false, insertable = false, updatable = false)
 	private Set<Combo> combos;
 	
 	public Player()
@@ -40,20 +41,20 @@ public class Player {
 		
 	}
 	
-	public String getGameName() {
-		return gameName;
+	public Long getGameID() {
+		return gameID;
 	}
 
-	public void setGameName(String gameName) {
-		this.gameName = gameName;
+	public void setGameID(Long gameID) {
+		this.gameID = gameID;
 	}
 
-	public Long getPlayerId() {
-		return playerId;
+	public Long getPlayerID() {
+		return playerID;
 	}
 
-	public void setPlayerId(Long playerId) {
-		this.playerId = playerId;
+	public void setPlayerID(Long playerID) {
+		this.playerID = playerID;
 	}
 
 	public String getFightingStyle() {
@@ -72,21 +73,12 @@ public class Player {
 		this.combos = combos;
 	}
 
-	public Player(String gameName, String playerName, Set<Combo> combos)
+	public Player(Long gameID, String playerName, Set<Combo> combos)
 	{
 		super();
 		this.playerName = playerName;
-		this.gameName = gameName;
+		this.gameID = gameID;
 		this.combos = combos;
-	}
-
-
-	public Long getId() {
-		return playerId;
-	}
-
-	public void setId(Long id) {
-		this.playerId = id;
 	}
 
 	public String getPlayerName() {
@@ -107,5 +99,5 @@ public class Player {
 
 
 	
-}
+}  
 

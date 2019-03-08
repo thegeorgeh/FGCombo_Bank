@@ -35,21 +35,19 @@ public class GameDomainTest {
 	
 	@Test
 	public void updateGame_WithValidInput_ShouldReturnUpdatedInput() {
-	    Long gameId = 1L;
-	    String userName = "Name";
+	    Long gameID = 1L;
+	    Long userID = 1L;
 	    String gameName = "Name";
 	    String gameImage = "Image";
 	    int releaseYear = 2019;
 	    
 	 
 	    Game game = new Game();
-	    game.setUserName(userName);
 	    game.setGameName(gameName);
-	    game.setGameId(gameId);
+	    game.setGameID(gameID);
 	    game.setReleaseYear(releaseYear);
 	    
-	    assertEquals(userName, game.getUserName());
-	    assertEquals(gameId, game.getId());
+	    assertEquals(gameID, game.getID());
 	    assertEquals(gameName, game.getGameName());
 	    assertEquals(releaseYear, game.getReleaseYear());
 

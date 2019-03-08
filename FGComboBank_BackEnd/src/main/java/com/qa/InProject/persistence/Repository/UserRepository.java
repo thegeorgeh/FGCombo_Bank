@@ -7,7 +7,8 @@ import com.qa.InProject.persistence.Domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-
+	
+	
 	
 
 }

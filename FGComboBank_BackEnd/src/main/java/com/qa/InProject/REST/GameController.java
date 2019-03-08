@@ -19,21 +19,21 @@ public class GameController {
 	@Autowired
 	public GameServiceImpl svc;
 
-	@RequestMapping("/addGame/{userName}/{gameName}/{player}")
-	public Game addGame(@PathVariable String userName, @PathVariable String gameName, @PathVariable Set<Player> player) {
-		Game result = svc.addGame(userName, gameName, player);
+	@RequestMapping("/addGame/{gameName}")
+	public Game addGame(@PathVariable String gameName) {
+		Game result = svc.addGame(gameName);
 
 		return result;
 	}
 	
-	@RequestMapping("/updateGame/{gameId}")
-	public String updateGame(@PathVariable Long gameId) {
-		return svc.updateGame(gameId);
+	@RequestMapping("/updateGame/{gameID}")
+	public String updateGame(@PathVariable Long gameID) {
+		return svc.updateGame(gameID);
 	}
 
-	@RequestMapping("/getGame/{gameId}")
-	public Optional <Game> getGame(@PathVariable Long gameId) {
-		return svc.getGame(gameId);
+	@RequestMapping("/getGame/{gameID}")
+	public Optional <Game> getGame(@PathVariable Long gameID) {
+		return svc.getGame(gameID);
 	}
 
 
@@ -44,9 +44,9 @@ public class GameController {
 		return allClasses;
 	}
 
-	@RequestMapping("/removeGame/{gameId}")
-	public String removeGame(@PathVariable Long gameId) {
-		return svc.removeGame(gameId);
+	@RequestMapping("/removeGame/{gameID}")
+	public String removeGame(@PathVariable Long gameID) {
+		return svc.removeGame(gameID);
 	}
 
 }

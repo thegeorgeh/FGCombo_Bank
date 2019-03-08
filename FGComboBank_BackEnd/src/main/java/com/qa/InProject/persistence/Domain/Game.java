@@ -20,17 +20,18 @@ public class Game {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	@Column(name = "userName")
-	private String userName;
-	@Column(name = "gameId")
-	private Long gameId;
+	@Column(name = "gameID")
+	private Long gameID;
+//	@Column(name = "userID")
+//	private Long userID;
+
 	@Column(name = "gameName")
 	private String gameName;
 	@Column(name = "releaseYear")
 	private int releaseYear;
 	
 	@OneToMany
-	@JoinColumn(name = "gameName", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "gameID", nullable = false, insertable = false, updatable = false)
 	private Set<Player> players;
 	
 
@@ -39,30 +40,30 @@ public class Game {
 		
 	}
 
-	public Game(String userName, String gameName, int releaseYear, Set<Player> players)
+	public Game(String gameName, Set<Player> players)
 	{
 		super();
 		this.gameName = gameName;
-		this.releaseYear = releaseYear;
+
 		
-		this.userName = userName;
+//		this.userID = userID;
 		this.players = players;
 	}
 
-	public String getUserName() {
-		return userName;
+//	public Long getUserID() {
+//		return userID;
+//	}
+//
+//	public void setUserID(Long userID) {
+//		this.userID = userID;
+//	}
+
+	public Long getGameID() {
+		return gameID;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public Long getGameId() {
-		return gameId;
-	}
-
-	public void setGameId(Long gameId) {
-		this.gameId = gameId;
+	public void setGameID(Long gameID) {
+		this.gameID = gameID;
 	}
 
 	public Set<Player> getPlayers() {
@@ -73,12 +74,12 @@ public class Game {
 		this.players = players;
 	}
 
-	public Long getId() {
-		return gameId;
+	public Long getID() {
+		return gameID;
 	}
 
-	public void setId(Long id) {
-		this.gameId = id;
+	public void setID(Long id) {
+		this.gameID = id;
 	}
 
 	public String getGameName() {
@@ -97,9 +98,10 @@ public class Game {
 		this.releaseYear = releaseYear;
 	}
 
-	public void getGameName(Long gameId) {
+	public void getGameName(Long gameID) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-}
+} 
+ 

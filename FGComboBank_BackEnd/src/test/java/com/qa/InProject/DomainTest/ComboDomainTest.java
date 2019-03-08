@@ -34,22 +34,22 @@ public class ComboDomainTest {
 	
 	@Test
 	public void updateCombo_WithValidInput_ShouldReturnUpdatedInput() {
-		String playerName = "Name";
-	    Long comboId = 1L;
+		Long playerID = 1L;
+	    Long comboID = 1L;
 	    String comboName = "Name";
 	    int comboDamage = 37;
 	    String comboInput = "Input";
 	    
 	 
 	    Combo combo = new Combo();
-	    combo.setPlayerName(playerName);
+	    combo.setPlayerID(playerID);
 	    combo.setComboName(comboName);
-	    combo.setId(comboId);
+	    combo.setID(comboID);
 	    combo.setcomboDamage(comboDamage);
 	    combo.setcomboInput(comboInput);
 	    
-	    assertEquals(playerName, combo.getPlayerName());
-	    assertEquals(comboId, combo.getId());
+	    assertEquals(playerID, combo.getPlayerID());
+	    assertEquals(comboID, combo.getID());
 	    assertEquals(comboName, combo.getComboName());
 	    assertEquals(comboDamage, combo.getcomboDamage());
 	    assertEquals(comboInput, combo.getcomboInput());

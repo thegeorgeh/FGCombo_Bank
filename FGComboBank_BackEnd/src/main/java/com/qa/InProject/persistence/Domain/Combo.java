@@ -14,10 +14,10 @@ public class Combo {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	@Column(name = "playerName")
-	private String playerName;
-	@Column(name = "comboId")
-	private Long comboId;
+	@Column(name = "comboID")
+	private Long comboID;
+	@Column(name = "playerID")
+	private Long playerID;
 	@Column(name = "comboName")
 	private String comboName;
 	@Column(name = "comboInput")
@@ -31,21 +31,21 @@ public class Combo {
 		
 	}
 	
-	public Combo(String playerName, String comboName, String comboInput)
+	public Combo(Long playerID, String comboName, String comboInput)
 	{
 		super();
 		this.comboName = comboName;
 		this.comboInput = comboInput;
-		this.playerName = playerName;
+		this.playerID = playerID;
 	}
 
 
-	public Long getId() {
-		return comboId;
+	public Long getID() {
+		return comboID;
 	}
 
-	public void setId(Long id) {
-		this.comboId = id;
+	public void setID(Long id) {
+		this.comboID = id;
 	}
 
 	public String getComboName() {
@@ -72,12 +72,12 @@ public class Combo {
 		this.comboDamage = comboDamage;
 	}
 	
-	public String getPlayerName() {
-		return playerName;
+	public Long getPlayerID() {
+		return playerID;
 	}
 
-	public void setPlayerName(String playerName) {
-		this.playerName = playerName;
+	public void setPlayerID(Long playerID) {
+		this.playerID = playerID;
 	}
 }
 

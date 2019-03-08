@@ -34,18 +34,18 @@ public class UserDomainTest {
 	
 	@Test
 	public void updateUser_WithValidInput_ShouldReturnUpdatedInput() {
-	    Long userId = 1L;
+	    Long userID = 1L;
 	    String userName = "Name";
 	    String userPassword = "Password";
 	    
 	 
 	    User user = new User();
 	    user.setUserName(userName);
-	    user.setUserId(userId);
+	    user.setUserID(userID);
 	    user.setUserPassword(userPassword);
 	    
 	    
-	    assertEquals(userId, user.getUserId());
+	    assertEquals(userID, user.getUserID());
 	    assertEquals(userName, user.getUserName());
 	    assertEquals(userPassword, user.getUserPassword());
 	    

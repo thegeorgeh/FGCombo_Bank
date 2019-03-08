@@ -21,12 +21,10 @@ public class GameServiceImpl implements GameService {
 	private GameRepository repo;	
 	
 	@Override
-	public Game addGame(String userName, String gameName, Set<Player> player) {
+	public Game addGame(String gameName) {
 		Game game = new Game();
-		game.setUserName(userName);
 		game.setGameName(gameName);
-		game.setPlayers(player);
-		
+
 		return repo.save(game);
 	}
 

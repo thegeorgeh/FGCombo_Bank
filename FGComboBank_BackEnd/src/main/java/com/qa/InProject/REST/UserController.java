@@ -24,14 +24,14 @@ public class UserController {
 		return result;
 	}
 	
-	@RequestMapping("/updateUser/{userId}")
-	public String updateUser(@PathVariable Long userId) {
-		return svc.updateUser(userId);
+	@RequestMapping("/updateUser/{userID}")
+	public String updateUser(@PathVariable Long userID) {
+		return svc.updateUser(userID);
 	}
 
-	@RequestMapping("/getUser/{userId}")
-	public Optional<User> getUser(@PathVariable Long userId) {
-		return svc.getUser(userId);
+	@RequestMapping("/getUser/{userID}")
+	public Optional<User> getUser(@PathVariable Long userID) {
+		return svc.getUser(userID);
 	}
 
 	@RequestMapping("/getAllUsers")
@@ -41,9 +41,15 @@ public class UserController {
 		return allClasses;
 	}
 
-	@RequestMapping("/removeUser/{userId}")
-	public String removeUser(@PathVariable Long userId) {
-		return svc.removeUser(userId);
+	@RequestMapping("/removeUser/{userID}")
+	public String removeUser(@PathVariable Long userID) {
+		return svc.removeUser(userID);
+	}
+	
+	@RequestMapping("logInUser/{userName}/{userPassword}")
+	public User logInUser(@PathVariable String userName, @PathVariable String userPassword) {
+		return svc.logInUser(userName, userPassword);
+
 	}
 
 }

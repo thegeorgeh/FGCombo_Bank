@@ -19,9 +19,9 @@ public class ComboServiceImpl implements ComboService {
 	private ComboRepository repo;	
 	
 	@Override
-	public Combo addCombo(String playerName, String comboName, String comboInput) {
+	public Combo addCombo(Long playerID, String comboName, String comboInput) {
 		Combo combo = new Combo();
-		combo.setPlayerName(playerName);
+		combo.setPlayerID(playerID);
 		combo.setComboName(comboName);
 		combo.setcomboInput(comboInput);
 		
@@ -34,19 +34,19 @@ public class ComboServiceImpl implements ComboService {
 	}
 
 	@Override
-	public Optional<Combo> getCombo(Long comboId) {
-		return repo.findById(comboId);
+	public Optional<Combo> getCombo(Long comboID) {
+		return repo.findById(comboID);
 	}
 
 	@Override
-	public String updateCombo(Long comboId) {
-		repo.findById(comboId);
+	public String updateCombo(Long comboID) {
+		repo.findById(comboID);
 		return null;
 	}
 
 	@Override
-	public String removeCombo(Long comboId) {
-		repo.findById(comboId);
+	public String removeCombo(Long comboID) {
+		repo.findById(comboID);
 		return null;
 	}
 	
@@ -54,6 +54,6 @@ public class ComboServiceImpl implements ComboService {
 	{
 		this.repo = repo;
 	}
-
-}
+ 
+} 
 

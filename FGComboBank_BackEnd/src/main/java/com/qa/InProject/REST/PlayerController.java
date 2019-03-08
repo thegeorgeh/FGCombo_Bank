@@ -19,17 +19,17 @@ public class PlayerController {
 	@Autowired
 	public PlayerServiceImpl svc;
 
-	@RequestMapping("/addPlayer/{gameName}/{playerName}/{combos}")
+	@RequestMapping("/addPlayer/{gameID}/{playerName}")
 
-	public Player addPlayer(@PathVariable String gameName, @PathVariable String playerName, @PathVariable Set<Combo> combos) {
-		Player result = svc.addPlayer(gameName, playerName, combos);
+	public Player addPlayer(@PathVariable Long gameID, @PathVariable String playerName) {
+		Player result = svc.addPlayer(gameID, playerName);
 
 		return result;
 	}
 	
-	@RequestMapping("/updatePlayer/{playerId}")
-	public String updatePlayer(@PathVariable Long playerId) {
-		return svc.updatePlayer(playerId);
+	@RequestMapping("/updatePlayer/{playerID}")
+	public String updatePlayer(@PathVariable Long playerID) {
+		return svc.updatePlayer(playerID);
 	}
 
 	@RequestMapping("/getPlayer/{playerID}")

@@ -24,8 +24,8 @@ public class User {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	@Column(name = "userId")
-	private Long userId;
+	@Column(name = "userID")
+	private Long userID;
 	@Column(name = "userName", unique=true)
 	private String userName;
 	@Column( name = "userPassword", nullable=false)
@@ -33,7 +33,7 @@ public class User {
 	
 	
 	@OneToMany
-	@JoinColumn(name = "userName", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "userID", nullable = false, insertable = false, updatable = false)
 	private Set<Game> games;
 	
 
@@ -47,7 +47,6 @@ public class User {
 	}
 	
 
-
 	public User(String userName, String userPassword, Set<Game> games)
 	{
 		this.userName = userName;
@@ -58,12 +57,12 @@ public class User {
 
 	
 
-	public Long getUserId() {
-		return userId;
+	public Long getUserID() {
+		return userID;
 	}
 
-	public void setUserId(Long id) {
-		this.userId = id;
+	public void setUserID(Long userID) {
+		this.userID = userID;
 	}
 
 	public String getUserName() {

@@ -7,9 +7,9 @@ import java.util.Set;
 import com.qa.InProject.persistence.Domain.*;
 
 public interface PlayerService {
-	public Player addPlayer(String gameName, String playerName, Set<Combo> combos);
-	public Optional<Player> getPlayer(Long playerId);
+	public Player addPlayer(Long gameID, String playerName);
+	public Optional<Player> getPlayer(Long playerID);
 	public List<Player> getAllPlayers();
-	public String removePlayer(Long playerId);
-	public String updatePlayer(Long playerId);
+	public String removePlayer(Long playerID);
+	public String updatePlayer(Long playerID);
 }

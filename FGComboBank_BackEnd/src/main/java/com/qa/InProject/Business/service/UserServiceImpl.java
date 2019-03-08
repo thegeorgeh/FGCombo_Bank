@@ -33,19 +33,40 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Optional<User> getUser(Long userId) {
-		return repo.findById(userId);
+	public Optional<User> getUser(Long userID) {
+		return repo.findById(userID);
 	}
 
 	@Override
-	public String updateUser(Long userId) {
-		repo.findById(userId);
+	public String updateUser(Long userID) {
+		repo.findById(userID);
 		return null;
 	}
 
 	@Override
-	public String removeUser(Long userId) {
-		repo.findById(userId);
+	public String removeUser(Long userID) {
+		repo.findById(userID);
+		return null;
+	}
+	
+	@Override
+	public User logInUser(String username, String userPassword) {
+		List<User> users = getAllUsers();
+//		for (int i = 0; i < users.size(); i++) {
+//			User user = users.get(i);
+//
+//			if (user.getUserName().equals(username)) {
+//				return user;
+//
+//			}
+//
+//		}
+//		return null; 
+		for (User user : users) {
+			if (user.getUserName().equals(username)) {
+				return user;
+			}
+		}
 		return null;
 	}
 	

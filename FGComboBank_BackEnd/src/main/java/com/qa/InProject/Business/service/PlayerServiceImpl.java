@@ -21,34 +21,33 @@ public class PlayerServiceImpl implements PlayerService {
 	private PlayerRepository repo;	
 	
 	@Override
-	public Player addPlayer(String gameName, String playerName, Set<Combo> combos) {
+	public Player addPlayer(Long gameID, String playerName) {
 		Player player = new Player();
-		player.setGameName(gameName);
+		player.setGameID(gameID);
 		player.setPlayerName(playerName);
-		player.setCombos(combos);
-		
 		return repo.save(player);
 	}
 
 	@Override
 	public List<Player> getAllPlayers() {
 		return repo.findAll();
+	
 	}
 
 	@Override
-	public Optional<Player> getPlayer(Long playerId) {
-		return repo.findById(playerId);
+	public Optional<Player> getPlayer(Long playerID) {
+		return repo.findById(playerID);
 	}
 
 	@Override
-	public String updatePlayer(Long playerId) {
-		repo.findById(playerId);
+	public String updatePlayer(Long playerID) {
+		repo.findById(playerID);
 		return null;
 	}
 
 	@Override
-	public String removePlayer(Long playerId) {
-		repo.findById(playerId);
+	public String removePlayer(Long playerID) {
+		repo.findById(playerID);
 		return null;
 	}
 	

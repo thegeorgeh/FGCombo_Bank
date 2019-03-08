@@ -34,21 +34,21 @@ public class PlayerDomainTest {
 	
 	@Test
 	public void updatePlayer_WithValidInput_ShouldReturnUpdatedInput() {
-		String gameName = "Name";
-	    Long playerId = 1L;
+		Long gameID = 1L;
+	    Long playerID = 1L;
 	    String playerName = "Name";
 	    String playerImage = "Image";
 	    String fightingStyle = "fight";
 	 
 	    Player player = new Player();
-	    player.setGameName(gameName);
+	    player.setGameID(gameID);
 	    player.setPlayerName(playerName);
-	    player.setPlayerId(playerId);
+	    player.setPlayerID(playerID);
 	    player.setImageUrl(playerImage);
 	    player.setFightingStyle(fightingStyle);
 	    
-	    assertEquals(gameName, player.getGameName());
-	    assertEquals(playerId, player.getPlayerId());
+	    assertEquals(gameID, player.getGameID());
+	    assertEquals(playerID, player.getPlayerID());
 	    assertEquals(playerName, player.getPlayerName());
 	    assertEquals(playerImage, player.getImageUrl());
 	    assertEquals(fightingStyle, player.getFightingStyle());
