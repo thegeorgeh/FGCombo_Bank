@@ -34,14 +34,19 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public Optional<Game> getGame(Long gameId) {
-		return repo.findById(gameId);
+	public Game getGame(Long gameId) {
+		return repo.findById(gameId).get();
 	}
 
 	@Override
-	public String updateGame(Long gameId) {
-		repo.findById(gameId);
-		return null;
+	public String updateGame(Long gameID, String gameName) {
+		Game game = getGame(gameID);
+		game.setGameName(gameName);
+		
+		Game newGame = game;
+		newGame.setGameName(gameName);
+		repo.save(newGame);
+		return "User " + gameID + " updated";
 	}
 
 	@Override

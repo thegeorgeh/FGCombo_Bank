@@ -51,14 +51,14 @@ public class GameRESTTest {
 	@Test
 	public void testGetAGame() {
 		Game MOCK_OBJECT = new Game();
-		Mockito.when(svc.getGame(testLong)).thenReturn(Optional.of(MOCK_OBJECT));
+		Mockito.when(svc.getGame(testLong)).thenReturn(MOCK_OBJECT);
 		assertEquals(Optional.of(MOCK_OBJECT), uCon.getGame(testLong));
 	}
 
 	@Test
 	public void testUpdateAGame() {
-		Mockito.when(svc.updateGame(testLong)).thenReturn(testString);
-		assertEquals(testString, uCon.updateGame(testLong));
+		Mockito.when(svc.updateGame(testLong, testGameName)).thenReturn(testString);
+		assertEquals(testString, uCon.updateGame(testLong, testGameName));
 	}
 
 	@Test

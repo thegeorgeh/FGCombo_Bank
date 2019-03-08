@@ -26,13 +26,13 @@ public class GameController {
 		return result;
 	}
 	
-	@RequestMapping("/updateGame/{gameID}")
-	public String updateGame(@PathVariable Long gameID) {
-		return svc.updateGame(gameID);
+	@RequestMapping("/updateGame/{gameID}/{gameName}")
+	public String updateGame(@PathVariable Long gameID, @PathVariable String gameName) {
+		return svc.updateGame(gameID, gameName);
 	}
 
 	@RequestMapping("/getGame/{gameID}")
-	public Optional <Game> getGame(@PathVariable Long gameID) {
+	public Game getGame(@PathVariable Long gameID) {
 		return svc.getGame(gameID);
 	}
 

@@ -7,5 +7,7 @@ import com.qa.InProject.persistence.Domain.Game;
 
 @Repository
 public interface GameRepository extends JpaRepository<Game, Long>{
+
+	
 	
 }
