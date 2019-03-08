@@ -52,7 +52,7 @@ public class ComboRESTTest {
 	public void testGetACombo() {
 		Combo MOCK_OBJECT = new Combo();
 		Mockito.when(svc.getCombo(testLong)).thenReturn(MOCK_OBJECT);
-		assertEquals(Optional.of(MOCK_OBJECT), uCon.getCombo(testLong));
+		assertEquals(MOCK_OBJECT, uCon.getCombo(testLong));
 	}
 
 	@Test

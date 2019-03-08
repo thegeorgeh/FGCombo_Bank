@@ -47,7 +47,7 @@ public class GameBusinessTest {
 	public void testGetAGame() {
 		Game MOCK_OBJECT = new Game();
 		Mockito.when(repo.findById(testLong)).thenReturn(Optional.of(MOCK_OBJECT));
-		assertEquals(Optional.of(MOCK_OBJECT), svc.getGame(testLong));
+		assertEquals(MOCK_OBJECT, svc.getGame(testLong));
 	}
 
 	@Test

@@ -47,14 +47,14 @@ public class ComboBusinessTest {
 	public void testGetACombo() {
 		Combo MOCK_OBJECT = new Combo();
 		Mockito.when(repo.findById(testLong)).thenReturn(Optional.of(MOCK_OBJECT));
-		assertEquals(Optional.of(MOCK_OBJECT), svc.getCombo(testLong));
+		assertEquals(MOCK_OBJECT, svc.getCombo(testLong));
 	}
 
 	@Test
 	public void testUpdateCombo() {
 //		// TODO add update method
-//		Mockito.when(testString).thenReturn(testString); 
-//		 assertEquals(testString, svc.updateCombo(testLong));
+//		Mockito.when(testLong, testString, testString).thenReturn(testString); 
+//		 assertEquals(testString, svc.updateCombo(testLong, testString, testString));
 	}
 
 	@Test

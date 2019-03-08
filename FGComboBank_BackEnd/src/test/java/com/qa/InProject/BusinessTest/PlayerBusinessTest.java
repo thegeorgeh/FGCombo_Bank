@@ -47,7 +47,7 @@ public class PlayerBusinessTest {
 	public void testGetAPlayer() {
 		Player MOCK_OBJECT = new Player();
 		Mockito.when(repo.findById(testLong)).thenReturn(Optional.of(MOCK_OBJECT));
-		assertEquals(Optional.of(MOCK_OBJECT), svc.getPlayer(testLong));
+		assertEquals(MOCK_OBJECT, svc.getPlayer(testLong));
 	}
 
 	@Test

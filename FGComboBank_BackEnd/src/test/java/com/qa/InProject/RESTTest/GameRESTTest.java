@@ -52,7 +52,7 @@ public class GameRESTTest {
 	public void testGetAGame() {
 		Game MOCK_OBJECT = new Game();
 		Mockito.when(svc.getGame(testLong)).thenReturn(MOCK_OBJECT);
-		assertEquals(Optional.of(MOCK_OBJECT), uCon.getGame(testLong));
+		assertEquals(MOCK_OBJECT, uCon.getGame(testLong));
 	}
 
 	@Test
