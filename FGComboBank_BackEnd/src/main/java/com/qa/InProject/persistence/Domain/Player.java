@@ -24,11 +24,8 @@ public class Player {
 	private Long playerID;
 	@Column(name = "gameID")
 	private Long gameID;
-
 	@Column(name = "playerName")
 	private String playerName;
-	@Column(name = "imageUrl")
-	private String imageUrl;
 	@Column(name = "fightingStyle")
 	private String fightingStyle;
 	
@@ -41,6 +38,22 @@ public class Player {
 		
 	}
 	
+	public Player(Long gameID, String playerName, Set<Combo> combos)
+	{
+		super();
+		this.playerName = playerName;
+		this.gameID = gameID;
+		this.combos = combos;
+	}
+	
+	public Long getPlayerID() {
+		return playerID;
+	}
+
+	public void setPlayerID(Long playerID) {
+		this.playerID = playerID;
+	}
+	
 	public Long getGameID() {
 		return gameID;
 	}
@@ -48,13 +61,13 @@ public class Player {
 	public void setGameID(Long gameID) {
 		this.gameID = gameID;
 	}
-
-	public Long getPlayerID() {
-		return playerID;
+	
+	public String getPlayerName() {
+		return playerName;
 	}
 
-	public void setPlayerID(Long playerID) {
-		this.playerID = playerID;
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
 	}
 
 	public String getFightingStyle() {
@@ -71,30 +84,6 @@ public class Player {
 
 	public void setCombos(Set<Combo> combos) {
 		this.combos = combos;
-	}
-
-	public Player(Long gameID, String playerName, Set<Combo> combos)
-	{
-		super();
-		this.playerName = playerName;
-		this.gameID = gameID;
-		this.combos = combos;
-	}
-
-	public String getPlayerName() {
-		return playerName;
-	}
-
-	public void setPlayerName(String PlayerName) {
-		this.playerName = PlayerName;
-	}
-	
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
 	}
 
 

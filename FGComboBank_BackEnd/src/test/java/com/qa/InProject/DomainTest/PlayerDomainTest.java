@@ -44,13 +44,11 @@ public class PlayerDomainTest {
 	    player.setGameID(gameID);
 	    player.setPlayerName(playerName);
 	    player.setPlayerID(playerID);
-	    player.setImageUrl(playerImage);
 	    player.setFightingStyle(fightingStyle);
 	    
 	    assertEquals(gameID, player.getGameID());
 	    assertEquals(playerID, player.getPlayerID());
 	    assertEquals(playerName, player.getPlayerName());
-	    assertEquals(playerImage, player.getImageUrl());
 	    assertEquals(fightingStyle, player.getFightingStyle());
 
 	}

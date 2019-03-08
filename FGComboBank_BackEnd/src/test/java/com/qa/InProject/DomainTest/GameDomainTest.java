@@ -47,7 +47,7 @@ public class GameDomainTest {
 	    game.setGameID(gameID);
 	    game.setReleaseYear(releaseYear);
 	    
-	    assertEquals(gameID, game.getID());
+	    assertEquals(gameID, game.getGameID());
 	    assertEquals(gameName, game.getGameName());
 	    assertEquals(releaseYear, game.getReleaseYear());
 

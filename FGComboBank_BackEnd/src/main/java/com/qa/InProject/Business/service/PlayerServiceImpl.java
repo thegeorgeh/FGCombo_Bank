@@ -22,9 +22,9 @@ public class PlayerServiceImpl implements PlayerService {
 	private PlayerRepository repo;	
 	
 	@Override
-	public Player addPlayer(Long playerID, String playerName) {
+	public Player addPlayer(Long gameID, String playerName) {
 		Player player = new Player();
-		player.setPlayerID(playerID);
+		player.setGameID(gameID);
 		player.setPlayerName(playerName);
 		return repo.save(player);
 	}
@@ -51,8 +51,8 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Override
 	public String removePlayer(Long playerID) {
-		repo.findById(playerID);
-		return null;
+		repo.deleteById(playerID);
+		return "Player "+playerID+" deleted";
 	}
 	
 	public void setRepo(PlayerRepository repo)

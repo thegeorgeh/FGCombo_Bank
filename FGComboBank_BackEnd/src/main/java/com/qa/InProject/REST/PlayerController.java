@@ -27,7 +27,7 @@ public class PlayerController {
 		return result;
 	}
 	
-	@RequestMapping("/updatePlayer/{playerID}")
+	@RequestMapping("/updatePlayer/{playerID}/{playerName}")
 	public String updatePlayer(@PathVariable Long playerID, @PathVariable String playerName) {
 		return svc.updatePlayer(playerID, playerName);
 	}

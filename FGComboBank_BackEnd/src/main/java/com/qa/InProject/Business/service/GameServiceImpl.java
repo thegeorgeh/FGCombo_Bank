@@ -34,8 +34,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public Game getGame(Long gameId) {
-		return repo.findById(gameId).get();
+	public Game getGame(Long gameID) {
+		return repo.findById(gameID).get();
 	}
 
 	@Override

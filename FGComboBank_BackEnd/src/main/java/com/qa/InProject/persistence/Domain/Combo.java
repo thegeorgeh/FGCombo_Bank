@@ -40,12 +40,20 @@ public class Combo {
 	}
 
 
-	public Long getID() {
+	public Long getComboID() {
 		return comboID;
 	}
 
-	public void setID(Long id) {
-		this.comboID = id;
+	public void setComboID(Long comboID) {
+		this.comboID = comboID;
+	}
+	
+	public Long getPlayerID() {
+		return playerID;
+	}
+
+	public void setPlayerID(Long playerID) {
+		this.playerID = playerID;
 	}
 
 	public String getComboName() {
@@ -72,12 +80,6 @@ public class Combo {
 		this.comboDamage = comboDamage;
 	}
 	
-	public Long getPlayerID() {
-		return playerID;
-	}
 
-	public void setPlayerID(Long playerID) {
-		this.playerID = playerID;
-	}
 }
 

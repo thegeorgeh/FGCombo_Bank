@@ -32,9 +32,9 @@ public class User {
 	private String userPassword;
 	
 	
-	@OneToMany
-	@JoinColumn(name = "userID", nullable = false, insertable = false, updatable = false)
-	private Set<Game> games;
+//	@OneToMany
+//	@JoinColumn(name = "userID", nullable = false, insertable = false, updatable = false)
+//	private Set<Game> games;
 	
 
 //	@OnDelete(action = OnDeleteAction.CASCADE)
@@ -47,11 +47,11 @@ public class User {
 	}
 	
 
-	public User(String userName, String userPassword, Set<Game> games)
+	public User(String userName, String userPassword)
 	{
 		this.userName = userName;
 		this.userPassword = userPassword;
-		this.games = games;
+//		this.games = games;
 		
 	}
 
@@ -81,13 +81,13 @@ public class User {
 		this.userPassword = userPassword;
 	}
 	
-	public Set<Game> getGames() {
-		return games;
-	}
-
-	public void setGames(Set<Game> games) {
-		this.games = games;
-	}
+//	public Set<Game> getGames() {
+//		return games;
+//	}
+//
+//	public void setGames(Set<Game> games) {
+//		this.games = games;
+//	}
 //
 //	public Set<Combo> getCombos() {
 //		return combos;

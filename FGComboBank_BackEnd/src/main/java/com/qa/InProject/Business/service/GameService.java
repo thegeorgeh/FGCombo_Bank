@@ -8,9 +8,9 @@ import com.qa.InProject.persistence.Domain.*;
 
 public interface GameService {
 	public Game addGame(String gameName);
-	public Game getGame(Long gameId);
+	public Game getGame(Long gameID);
 	public List<Game> getAllGames();
-	public String removeGame(Long gameId);
+	public String removeGame(Long gameID);
 	public String updateGame(Long gameID, String gameName);
 	
 }
