@@ -42,17 +42,15 @@ public class GameServiceImpl implements GameService {
 	public String updateGame(Long gameID, String gameName) {
 		Game game = getGame(gameID);
 		game.setGameName(gameName);
-		
-		Game newGame = game;
-		newGame.setGameName(gameName);
-		repo.save(newGame);
+	
+		repo.save(game);
 		return "User " + gameID + " updated";
 	}
 
 	@Override
-	public String removeGame(Long gameId) {
-		repo.findById(gameId);
-		return null;
+	public String removeGame(Long gameID) {
+		repo.deleteById(gameID);
+		return "Game "+gameID+" deleted";
 	}
 	
 	public void setRepo(GameRepository repo)
