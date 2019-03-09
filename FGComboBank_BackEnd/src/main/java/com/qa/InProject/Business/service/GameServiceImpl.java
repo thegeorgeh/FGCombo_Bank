@@ -13,13 +13,12 @@ import com.qa.InProject.persistence.Domain.Game;
 import com.qa.InProject.persistence.Domain.Player;
 import com.qa.InProject.persistence.Repository.GameRepository;
 
-
 @Service
 public class GameServiceImpl implements GameService {
 
 	@Autowired
-	private GameRepository repo;	
-	
+	private GameRepository repo;
+
 	@Override
 	public Game addGame(String gameName) {
 		Game game = new Game();
@@ -42,7 +41,7 @@ public class GameServiceImpl implements GameService {
 	public String updateGame(Long gameID, String gameName) {
 		Game game = getGame(gameID);
 		game.setGameName(gameName);
-	
+
 		repo.save(game);
 		return "User " + gameID + " updated";
 	}
@@ -50,12 +49,18 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public String removeGame(Long gameID) {
 		repo.deleteById(gameID);
-		return "Game "+gameID+" deleted";
+		return "Game " + gameID + " deleted";
 	}
-	
-	public void setRepo(GameRepository repo)
-	{
+
+	public void setRepo(GameRepository repo) {
 		this.repo = repo;
+	}
+
+	@Override
+	public List<Player> getGamePlayers(Long gameID) {
+		Game game = repo.findById(gameID).get();
+
+		return game.getPlayers();
 	}
 
 }

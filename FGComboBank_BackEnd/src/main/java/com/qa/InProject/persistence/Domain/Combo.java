@@ -31,9 +31,10 @@ public class Combo {
 		
 	}
 	
-	public Combo(Long playerID, String comboName, String comboInput)
+	public Combo(Long comboID, Long playerID, String comboName, String comboInput)
 	{
-		super();
+		super(); 
+		this.comboID = comboID;
 		this.comboName = comboName;
 		this.comboInput = comboInput;
 		this.playerID = playerID;

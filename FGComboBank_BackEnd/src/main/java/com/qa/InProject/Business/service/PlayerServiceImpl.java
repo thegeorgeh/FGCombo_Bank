@@ -14,13 +14,12 @@ import com.qa.InProject.persistence.Domain.Player;
 import com.qa.InProject.persistence.Domain.Player;
 import com.qa.InProject.persistence.Repository.PlayerRepository;
 
-
 @Service
 public class PlayerServiceImpl implements PlayerService {
 
 	@Autowired
-	private PlayerRepository repo;	
-	
+	private PlayerRepository repo;
+
 	@Override
 	public Player addPlayer(Long gameID, String playerName) {
 		Player player = new Player();
@@ -32,7 +31,7 @@ public class PlayerServiceImpl implements PlayerService {
 	@Override
 	public List<Player> getAllPlayers() {
 		return repo.findAll();
-	
+
 	}
 
 	@Override
@@ -44,7 +43,7 @@ public class PlayerServiceImpl implements PlayerService {
 	public String updatePlayer(Long playerID, String playerName) {
 		Player player = getPlayer(playerID);
 		player.setPlayerName(playerName);
-	
+
 		repo.save(player);
 		return "User " + playerID + " updated";
 	}
@@ -52,13 +51,23 @@ public class PlayerServiceImpl implements PlayerService {
 	@Override
 	public String removePlayer(Long playerID) {
 		repo.deleteById(playerID);
-		return "Player "+playerID+" deleted";
+		return "Player " + playerID + " deleted";
 	}
-	
-	public void setRepo(PlayerRepository repo)
-	{
+
+	public void setRepo(PlayerRepository repo) {
 		this.repo = repo;
 	}
 
-}
+	@Override
+	public List<Combo> getPlayerCombos(Long playerID) {
+		Player player = repo.findById(playerID).get();
+		return player.getCombos();
+	}
 
+//	@Override
+//	public List<Player> getGamePlayers(Long gameID) {
+//		Game game = repo.findById(gameID);
+//		return null;
+//	}
+
+}

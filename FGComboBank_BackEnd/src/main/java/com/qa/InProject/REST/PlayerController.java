@@ -49,5 +49,9 @@ public class PlayerController {
 	public String removePlayer(@PathVariable Long playerID) {
 		return svc.removePlayer(playerID);
 	}
-
+	
+	@RequestMapping("/getPlayerCombos/{playerID}")
+	public List<Combo> getPlayerCombos(@PathVariable Long playerID){ 
+		return svc.getPlayerCombos(playerID);
+	}
 }

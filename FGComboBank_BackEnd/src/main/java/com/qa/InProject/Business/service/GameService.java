@@ -12,5 +12,6 @@ public interface GameService {
 	public List<Game> getAllGames();
 	public String removeGame(Long gameID);
 	public String updateGame(Long gameID, String gameName);
+	public List<Player> getGamePlayers(Long gameID);
 	
 }

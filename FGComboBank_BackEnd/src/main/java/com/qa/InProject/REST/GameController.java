@@ -47,6 +47,12 @@ public class GameController {
 	@RequestMapping("/removeGame/{gameID}")
 	public String removeGame(@PathVariable Long gameID) {
 		return svc.removeGame(gameID);
+	} 
+	
+	@RequestMapping("/getGamePlayers/{gameID}")
+	public List<Player> getGamePlayers(@PathVariable Long gameID){
+		return svc.getGamePlayers(gameID); 
+		
 	}
 
 }

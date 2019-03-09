@@ -34,12 +34,12 @@ public class User {
 	
 //	@OneToMany
 //	@JoinColumn(name = "userID", nullable = false, insertable = false, updatable = false)
-//	private Set<Game> games;
+//	private List<Game> games;
 	
 
 //	@OnDelete(action = OnDeleteAction.CASCADE)
 	
-//	private Set<Combo> combos;
+//	private List<Combo> combos;
 //	
 	public User()
 	{
@@ -47,8 +47,9 @@ public class User {
 	}
 	
 
-	public User(String userName, String userPassword)
+	public User(Long userID, String userName, String userPassword)
 	{
+		this.userID = userID;
 		this.userName = userName;
 		this.userPassword = userPassword;
 //		this.games = games;

@@ -31,16 +31,17 @@ public class Player {
 	
 	@OneToMany
 	@JoinColumn(name = "playerID", nullable = false, insertable = false, updatable = false)
-	private Set<Combo> combos;
+	private List<Combo> combos;
 	
 	public Player()
 	{
 		
 	}
 	
-	public Player(Long gameID, String playerName, Set<Combo> combos)
+	public Player(Long playerID, Long gameID, String playerName, List<Combo> combos)
 	{
-		super();
+		super(); 
+		this.playerID = playerID;
 		this.playerName = playerName;
 		this.gameID = gameID;
 		this.combos = combos;
@@ -78,11 +79,11 @@ public class Player {
 		this.fightingStyle = fightingStyle;
 	}
 
-	public Set<Combo> getCombos() {
+	public List<Combo> getCombos() {
 		return combos;
 	}
 
-	public void setCombos(Set<Combo> combos) {
+	public void setCombos(List<Combo> combos) {
 		this.combos = combos;
 	}
 

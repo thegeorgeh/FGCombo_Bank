@@ -2,7 +2,7 @@ package com.qa.InProject.persistence.Domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,14 +30,14 @@ public class Game {
 	
 	@OneToMany
 	@JoinColumn(name = "gameID", nullable = false, insertable = false, updatable = false)
-	private Set<Player> players;
+	private List<Player> players;
 	
 	public Game()
 	{
 		
 	}
 
-	public Game(Long gameID, String gameName, Set<Player> players)
+	public Game(Long gameID, String gameName, List<Player> players)
 	{
 		this.gameID = gameID;
 		this.gameName = gameName;
@@ -68,11 +68,11 @@ public class Game {
 		this.releaseYear = releaseYear;
 	}
 	
-	public Set<Player> getPlayers() {
+	public List<Player> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Set<Player> players) {
+	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
 	

@@ -11,5 +11,6 @@ public interface PlayerService {
 	public Player getPlayer(Long playerID);
 	public List<Player> getAllPlayers();
 	public String removePlayer(Long playerID);
-	public String updatePlayer(Long playerID, String playerName);
+	public String updatePlayer(Long playerID, String playerName); 
+	public List<Combo> getPlayerCombos(Long playerID);
 }
