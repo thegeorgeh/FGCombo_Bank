@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+.body {
+  margin-top: 5%;
+  font-family: 'SSF4 Abuket Regular', 'Helvetica Neue', 'Courier New', Courier, monospace !important;
+}
+
+.gameLogo {
+  width: 75% !important;
+  height: 75% !important;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+Navlink {
+  text-decoration-style: none;
+  font-family: 'SSF4 Abuket Regular', 'Sniglet-ExtraBold' !important;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body{
+  background-color: white;
+}
+
+h1 {
+  font-size: 500%;
+  font-family: 'SSF4 Abuket Regular', 'Sniglet-ExtraBold' !important;
+}
+
+#Main {
+  font-size: 1000%;
+  font-family: 'SSF4 Abuket Regular'!important;
+}
+
+/* #TekkenFont {
+  font-family: 'tekken 6 2' !important;
+} */
+
+.d-flex {
+  font-size: 150%;
+
+}
+
+GameList {
+  font-size: 250%;
+  font-weight: bold;
+}
+
+a, li {
+  list-style-type: none !important;
+}
+
+
+
+
+
