@@ -172,15 +172,6 @@ class User extends Component {
                 <a>{this.state.requestResponse}</a>
             </div>
         );
-
-        // if(this.state.loggedIn) {
-        //     return (
-        //         <div>
-        //         <Routing currentUsername={this.state.enteredUsername} currentUserID={this.state.user.userID} logOut={this.logOut} />
-        //       </div>
-            
-        //     );
-        // }
     }
 
 

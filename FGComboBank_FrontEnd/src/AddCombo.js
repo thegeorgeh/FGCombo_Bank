@@ -15,7 +15,8 @@ class AddCombo extends Component {
 
     pushRequest = () => {
         var nameCombo = document.getElementById('nameCombo').value;
-        axios.post(`/addCombo/${this.state.comboName}`);
+        var inputCombo = document.getElementById('inputCombo').value;
+        axios.post(`/addCombo/${this.state.playerID}/${this.state.comboName}/${this.state.comboInput}`);
     }
 
     editRequest = () => {

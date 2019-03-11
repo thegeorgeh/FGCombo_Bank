@@ -12,9 +12,6 @@ class DisplayGamePlayerCombos extends Component {
       }
     
       getRequest = () => {
-        // console.log("doing getuserAlgRequest");
-        // console.log(this.props.currentUserID + " User id succesfully passed");
-        // console.log(this.props.algID + " alg");
         axios.get(`/getGamePlayers/${this.props.gameID}`).then(r => { this.setState({ players: r.data }) });
     
       }
