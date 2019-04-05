@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.qa.InProject.CONSTANTS;
 //import com.qa.business.AlgorithmServiceImpl;
 import com.qa.InProject.Business.service.ComboServiceImpl;
 //import com.qa.persistence.domain.Algorithm;
@@ -23,10 +24,7 @@ import com.qa.InProject.REST.ComboController;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ComboRESTTest {
-	private static final String testString = "test";
-	private static final String testComboName = "comboname";
-	private static final String testPlayer = "player";
-	private static final Long testLong = 1L;
+
 	@InjectMocks
 	ComboController uCon;
 
@@ -51,20 +49,20 @@ public class ComboRESTTest {
 	@Test
 	public void testGetACombo() {
 		Combo MOCK_OBJECT = new Combo();
-		Mockito.when(svc.getCombo(testLong)).thenReturn(MOCK_OBJECT);
-		assertEquals(MOCK_OBJECT, uCon.getCombo(testLong));
+		Mockito.when(svc.getCombo(CONSTANTS.TEST_LONG)).thenReturn(MOCK_OBJECT);
+		assertEquals(MOCK_OBJECT, uCon.getCombo(CONSTANTS.TEST_LONG));
 	}
 
 	@Test
 	public void testUpdateACombo() {
-		Mockito.when(svc.updateCombo(testLong, testComboName, testComboName)).thenReturn(testString);
-		assertEquals(testString, uCon.updateCombo(testLong, testComboName, testComboName));
+		Mockito.when(svc.updateCombo(CONSTANTS.TEST_LONG, CONSTANTS.TEST_STRING, CONSTANTS.TEST_STRING)).thenReturn(CONSTANTS.TEST_STRING);
+		assertEquals(CONSTANTS.TEST_STRING, uCon.updateCombo(CONSTANTS.TEST_LONG, CONSTANTS.TEST_STRING, CONSTANTS.TEST_STRING));
 	}
 
 	@Test
 	public void testDeleteCombo() {
-		Mockito.when(svc.removeCombo(testLong)).thenReturn(testString);
-		assertEquals(testString, uCon.removeCombo(testLong));
+		Mockito.when(svc.removeCombo(CONSTANTS.TEST_LONG)).thenReturn(CONSTANTS.TEST_STRING);
+		assertEquals(CONSTANTS.TEST_STRING, uCon.removeCombo(CONSTANTS.TEST_LONG));
 	} 
 	
 }

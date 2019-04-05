@@ -1,11 +1,6 @@
 package com.qa.InProject.Business.service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 
 import org.springframework.stereotype.Service;
 
@@ -16,9 +11,13 @@ import com.qa.InProject.persistence.Repository.GameRepository;
 @Service
 public class GameServiceImpl implements GameService {
 
-	@Autowired
+	
 	private GameRepository repo;
 
+	public GameServiceImpl(GameRepository repo) {
+		this.repo = repo;
+	}
+	
 	@Override
 	public Game addGame(String gameName) {
 		Game game = new Game();

@@ -10,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.qa.InProject.CONSTANTS;
 import com.qa.InProject.Business.service.ComboService;
 import com.qa.InProject.persistence.Domain.Combo;
 import com.qa.InProject.persistence.Repository.ComboRepository;
@@ -24,35 +25,27 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 public class ComboDomainTest {
 	
-	@Mock(name="comboRepository")
-    private ComboRepository comboRepo;
+
 
     @Before
     public void setUp(){
-        MockitoAnnotations.initMocks(this);
+
     }
 	
 	@Test
 	public void updateCombo_WithValidInput_ShouldReturnUpdatedInput() {
-		Long playerID = 1L;
-	    Long comboID = 1L;
-	    String comboName = "Name";
-	    int comboDamage = 37;
-	    String comboInput = "Input";
 	    
-	 
-	    Combo combo = new Combo();
-	    combo.setPlayerID(playerID);
-	    combo.setComboName(comboName);
-	    combo.setComboID(comboID);
-	    combo.setComboDamage(comboDamage);
-	    combo.setComboInput(comboInput);
+	    CONSTANTS.COMBO_MOCK_OBJECT.setPlayerID(CONSTANTS.TEST_LONG);
+	    CONSTANTS.COMBO_MOCK_OBJECT.setComboName(CONSTANTS.TEST_STRING);
+	    CONSTANTS.COMBO_MOCK_OBJECT.setComboID(CONSTANTS.TEST_LONG);
+	    CONSTANTS.COMBO_MOCK_OBJECT.setComboDamage(CONSTANTS.TEST_INT);
+	    CONSTANTS.COMBO_MOCK_OBJECT.setComboInput(CONSTANTS.TEST_STRING);
 	    
-	    assertEquals(playerID, combo.getPlayerID());
-	    assertEquals(comboID, combo.getComboID());
-	    assertEquals(comboName, combo.getComboName());
-	    assertEquals(comboDamage, combo.getComboDamage());
-	    assertEquals(comboInput, combo.getComboInput());
+	    assertEquals(CONSTANTS.TEST_LONG, CONSTANTS.COMBO_MOCK_OBJECT.getPlayerID());
+	    assertEquals(CONSTANTS.TEST_LONG, CONSTANTS.COMBO_MOCK_OBJECT.getComboID());
+	    assertEquals(CONSTANTS.TEST_STRING, CONSTANTS.COMBO_MOCK_OBJECT.getComboName());
+	    assertEquals(CONSTANTS.TEST_INT, CONSTANTS.COMBO_MOCK_OBJECT.getComboDamage());
+	    assertEquals(CONSTANTS.TEST_STRING, CONSTANTS.COMBO_MOCK_OBJECT.getComboInput());
 
 	}
 }

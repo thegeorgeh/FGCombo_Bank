@@ -14,14 +14,14 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.qa.InProject.CONSTANTS;
 import com.qa.InProject.Business.service.ComboServiceImpl;
 import com.qa.InProject.persistence.Domain.Combo;
 import com.qa.InProject.persistence.Repository.ComboRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ComboBusinessTest {
-	private static final Long testLong = 1L;
-	private static final String testString = "test";
+
 	@InjectMocks
 	ComboServiceImpl svc;
 
@@ -46,8 +46,8 @@ public class ComboBusinessTest {
 	@Test
 	public void testGetACombo() {
 		Combo MOCK_OBJECT = new Combo();
-		Mockito.when(repo.findById(testLong)).thenReturn(Optional.of(MOCK_OBJECT));
-		assertEquals(MOCK_OBJECT, svc.getCombo(testLong));
+		Mockito.when(repo.findById(CONSTANTS.TEST_LONG)).thenReturn(Optional.of(MOCK_OBJECT));
+		assertEquals(MOCK_OBJECT, svc.getCombo(CONSTANTS.TEST_LONG));
 	}
 
 	@Test

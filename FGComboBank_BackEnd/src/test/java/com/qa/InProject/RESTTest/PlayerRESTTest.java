@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.qa.InProject.CONSTANTS;
 //import com.qa.business.AlgorithmServiceImpl;
 import com.qa.InProject.Business.service.PlayerServiceImpl;
 //import com.qa.persistence.domain.Algorithm;
@@ -23,10 +24,7 @@ import com.qa.InProject.REST.PlayerController;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PlayerRESTTest {
-	private static final String testString = "test";
-	private static final String testPlayerName = "playername";
-	private static final String testPlayer = "player";
-	private static final Long testLong = 1L;
+
 	@InjectMocks
 	PlayerController uCon;
 
@@ -51,20 +49,20 @@ public class PlayerRESTTest {
 	@Test
 	public void testGetAPlayer() {
 		Player MOCK_OBJECT = new Player();
-		Mockito.when(svc.getPlayer(testLong)).thenReturn(MOCK_OBJECT);
-		assertEquals(MOCK_OBJECT, uCon.getPlayer(testLong));
+		Mockito.when(svc.getPlayer(CONSTANTS.TEST_LONG)).thenReturn(MOCK_OBJECT);
+		assertEquals(MOCK_OBJECT, uCon.getPlayer(CONSTANTS.TEST_LONG));
 	}
 
 	@Test
 	public void testUpdateAPlayer() {
-		Mockito.when(svc.updatePlayer(testLong, testPlayerName)).thenReturn(testString);
-		assertEquals(testString, uCon.updatePlayer(testLong, testPlayerName));
+		Mockito.when(svc.updatePlayer(CONSTANTS.TEST_LONG, CONSTANTS.TEST_STRING)).thenReturn(CONSTANTS.TEST_STRING);
+		assertEquals(CONSTANTS.TEST_STRING, uCon.updatePlayer(CONSTANTS.TEST_LONG, CONSTANTS.TEST_STRING));
 	}
 
 	@Test
 	public void testDeletePlayer() {
-		Mockito.when(svc.removePlayer(testLong)).thenReturn(testString);
-		assertEquals(testString, uCon.removePlayer(testLong));
+		Mockito.when(svc.removePlayer(CONSTANTS.TEST_LONG)).thenReturn(CONSTANTS.TEST_STRING);
+		assertEquals(CONSTANTS.TEST_STRING, uCon.removePlayer(CONSTANTS.TEST_LONG));
 	} 
 	
 }

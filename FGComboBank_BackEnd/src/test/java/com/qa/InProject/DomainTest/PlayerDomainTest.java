@@ -10,8 +10,8 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.qa.InProject.CONSTANTS;
 import com.qa.InProject.Business.service.PlayerService;
-import com.qa.InProject.persistence.Domain.Player;
 import com.qa.InProject.persistence.Repository.PlayerRepository;
 
 import static org.junit.Assert.assertEquals;
@@ -23,33 +23,25 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 
 public class PlayerDomainTest {
-	
-	@Mock(name="playerRepository")
-    private PlayerRepository playerRepo;
 
     @Before
     public void setUp(){
-        MockitoAnnotations.initMocks(this);
+        
     }
 	
 	@Test
 	public void updatePlayer_WithValidInput_ShouldReturnUpdatedInput() {
-		Long gameID = 1L;
-	    Long playerID = 1L;
-	    String playerName = "Name";
-	    String playerImage = "Image";
-	    String fightingStyle = "fight";
 	 
-	    Player player = new Player();
-	    player.setGameID(gameID);
-	    player.setPlayerName(playerName);
-	    player.setPlayerID(playerID);
-	    player.setFightingStyle(fightingStyle);
 	    
-	    assertEquals(gameID, player.getGameID());
-	    assertEquals(playerID, player.getPlayerID());
-	    assertEquals(playerName, player.getPlayerName());
-	    assertEquals(fightingStyle, player.getFightingStyle());
+		CONSTANTS.PLAYER_MOCK_OBJECT.setGameID(CONSTANTS.TEST_LONG);
+	    CONSTANTS.PLAYER_MOCK_OBJECT.setPlayerName(CONSTANTS.TEST_STRING);
+	    CONSTANTS.PLAYER_MOCK_OBJECT.setPlayerID(CONSTANTS.TEST_LONG);
+	    CONSTANTS.PLAYER_MOCK_OBJECT.setFightingStyle(CONSTANTS.TEST_STRING);
+	    
+	    assertEquals(CONSTANTS.TEST_LONG, CONSTANTS.PLAYER_MOCK_OBJECT.getGameID());
+	    assertEquals(CONSTANTS.TEST_LONG, CONSTANTS.PLAYER_MOCK_OBJECT.getPlayerID());
+	    assertEquals(CONSTANTS.TEST_STRING, CONSTANTS.PLAYER_MOCK_OBJECT.getPlayerName());
+	    assertEquals(CONSTANTS.TEST_STRING, CONSTANTS.PLAYER_MOCK_OBJECT.getFightingStyle());
 
 	}
 }

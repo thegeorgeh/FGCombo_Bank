@@ -11,6 +11,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.qa.InProject.CONSTANTS;
 import com.qa.InProject.Business.service.GameService;
 import com.qa.InProject.persistence.Domain.Game;
 import com.qa.InProject.persistence.Repository.GameRepository;
@@ -35,21 +36,15 @@ public class GameDomainTest {
 	
 	@Test
 	public void updateGame_WithValidInput_ShouldReturnUpdatedInput() {
-	    Long gameID = 1L;
-	    Long userID = 1L;
-	    String gameName = "Name";
-	    String gameImage = "Image";
-	    int releaseYear = 2019;
+
 	    
-	 
-	    Game game = new Game();
-	    game.setGameName(gameName);
-	    game.setGameID(gameID);
-	    game.setReleaseYear(releaseYear);
+	    CONSTANTS.GAME_MOCK_OBJECT.setGameName(CONSTANTS.TEST_STRING);
+	    CONSTANTS.GAME_MOCK_OBJECT.setGameID(CONSTANTS.TEST_LONG);
+	    CONSTANTS.GAME_MOCK_OBJECT.setReleaseYear(CONSTANTS.TEST_INT);
 	    
-	    assertEquals(gameID, game.getGameID());
-	    assertEquals(gameName, game.getGameName());
-	    assertEquals(releaseYear, game.getReleaseYear());
+	    assertEquals(CONSTANTS.TEST_LONG, CONSTANTS.GAME_MOCK_OBJECT.getGameID());
+	    assertEquals(CONSTANTS.TEST_STRING, CONSTANTS.GAME_MOCK_OBJECT.getGameName());
+	    assertEquals(CONSTANTS.TEST_INT, CONSTANTS.GAME_MOCK_OBJECT.getReleaseYear());
 
 	}
 }
